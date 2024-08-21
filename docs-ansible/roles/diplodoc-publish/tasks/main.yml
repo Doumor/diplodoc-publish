@@ -1,0 +1,5 @@
+- name: Copy files
+  become: true
+  ansible.builtin.copy:
+    src: "{{ playbook_dir }}/../docs-html/"
+    dest: /var/www/html

@@ -1,0 +1,15 @@
+name: diplodoc-publish
+on:
+  push:
+    branches:
+      - main
+jobs:
+- name: Run playbook
+  uses: dawidd6/action-ansible-playbook@v2
+  with:
+    # Required, playbook filepath
+    playbook: run.yml
+    # Optional, directory where playbooks live
+    directory: ./docs-ansible
+    # Optional, ansible configuration file content (ansible.cfg)
+    key: ${{secrets.SSH_PRIVATE_KEY}}

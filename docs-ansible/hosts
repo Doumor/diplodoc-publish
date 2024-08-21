@@ -1,0 +1,6 @@
+[diplodoc-server]
+89.169.149.15
+[diplodoc-server:vars]
+ansible_connection=ssh
+ansible_user=ansible
+StrictHostKeyChecking=accept-new
