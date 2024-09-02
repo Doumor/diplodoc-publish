@@ -11,6 +11,7 @@
 #     mode: '0755'
 
 - name: "Create projects dirs"
+  become: true
   ansible.builtin.file:
     path: "/var/www/html/{{ item.href }}"
     owner: root
