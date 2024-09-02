@@ -3,7 +3,7 @@
   hosts: diplodoc-server
   roles:
   - role: platform1c
-      diplodoc_config: "{{ role_path }}/files/diplodoc.yaml"
+    diplodoc_config: "{{ role_path }}/files/diplodoc.yaml"
 
   - role: diplodoc-publish
 
