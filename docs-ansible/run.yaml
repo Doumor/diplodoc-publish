@@ -1,7 +1,0 @@
----
-- name: Run role diplodoc-publish on diplodoc-server
-  hosts: diplodoc-server
-  roles:
-  - role: diplodoc-publish
-  # roles:
-  # - role: genlab.diplodoc-publish

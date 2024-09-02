@@ -10,6 +10,6 @@ jobs:
     # Required, playbook filepath
     playbook: run.yml
     # Optional, directory where playbooks live
-    directory: ./docs-ansible
+    directory: ./docs/ansible
     # Optional, ansible configuration file content (ansible.cfg)
     key: ${{secrets.SSH_PRIVATE_KEY}}

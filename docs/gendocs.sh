@@ -1,1 +1,1 @@
-yfm -i ./ -o ../docs-html
+yfm -i ./diplodoc -o ./html
