@@ -1,5 +1,4 @@
 - name: "Read variables from the configuration file"
-  tags: [platform1c]
   ansible.builtin.include_vars:
     file: "{{ diplodoc_config }}"
 
@@ -12,6 +11,7 @@
 #     mode: '0755'
 
 - name: "Create/update index.html"
+  become: true
   ansible.builtin.template:
     src: index.html.j2
     dest: /var/www/index.html
