@@ -4,12 +4,21 @@ on:
     branches:
       - main
 jobs:
-- name: Run playbook
-  uses: dawidd6/action-ansible-playbook@v2
-  with:
+  diplodoc-publish:
+    name: diplodoc-publish
+    runs-on: ubuntu-latest
+    steps:
+     - name: Checkout repo
+       uses: actions/checkout@v4
+       
+     - name: Run playbook
+       uses: dawidd6/action-ansible-playbook@v2
+       with:
     # Required, playbook filepath
-    playbook: run.yml
+         playbook: run.yaml
     # Optional, directory where playbooks live
-    directory: ./docs/ansible
+         directory: ./docs/ansible
     # Optional, ansible configuration file content (ansible.cfg)
-    key: ${{secrets.SSH_PRIVATE_KEY}}
+         key: ${{secrets.SSH_PRIVATE_KEY}}
+         options: |
+          --inventory hosts
