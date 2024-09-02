@@ -10,11 +10,20 @@
 #     group: root
 #     mode: '0755'
 
+- name: "Create projects dirs"
+  ansible.builtin.file:
+    path: "/var/www/html/{{ item.href }}"
+    owner: root
+    group: root
+    state: directory
+    mode: '0755'
+  loop: "{{ diplodoc_projects }}"
+
 - name: "Create/update index.html"
   become: true
   ansible.builtin.template:
     src: index.html.j2
-    dest: /var/www/index.html
+    dest: /var/www/html/index.html
     owner: root
     group: root
     mode: '0755'
