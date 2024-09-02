@@ -3,3 +3,4 @@
   ansible.posix.synchronize:
     src: "{{ playbook_dir }}/../html/"
     dest: /var/www/html/linux_onboarding
+    delete: true
