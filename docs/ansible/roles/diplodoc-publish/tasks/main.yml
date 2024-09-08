@@ -5,6 +5,7 @@
 - name: "Sync current docs with docs on server"
   become: true
   ansible.posix.synchronize:
-    src: "{{ playbook_dir }}/../html/linux_onboarding"
-    dest: "/var/www/html/linux_onboarding"
+    src: "{{ playbook_dir }}/../html/{{ item.href }}"
+    dest: "/var/www/html/{{ item.href }}"
     delete: true
+  loop: "{{ diplodoc_projects }}"
