@@ -2,6 +2,11 @@
   ansible.builtin.include_vars:
     file: "{{ diplodoc_config }}"
 
+- name: Find out playbook's path
+  shell: pwd
+  register: playbook_path_output
+- debug: var=playbook_path_output.stdout
+
 - name: "Sync current docs with docs on server"
   become: true
   ansible.posix.synchronize:
