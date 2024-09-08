@@ -1,5 +1,5 @@
 [diplodoc-server]
-89.169.153.18
+89.169.154.241
 [diplodoc-server:vars]
 ansible_connection=ssh
 ansible_user=ansible
