@@ -6,6 +6,5 @@
   become: true
   ansible.posix.synchronize:
     src: "{{ playbook_dir }}/../html/"
-    dest: "/var/www/html/{{ item.href }}"
+    dest: "/var/www/html/linux_onboarding"
     delete: true
-  loop: "{{ diplodoc_projects }}"
