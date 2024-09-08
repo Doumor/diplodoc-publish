@@ -15,7 +15,7 @@ jobs:
        with:
          node-version: 20
      - run: npm i @diplodoc/cli -g
-     - run: ./docs/gendocs.sh
+     - run: cd ./docs && ./gendocs.sh
 
      - name: Run playbook
        uses: dawidd6/action-ansible-playbook@v2
