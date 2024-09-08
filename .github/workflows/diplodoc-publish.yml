@@ -15,7 +15,7 @@ jobs:
        with:
          node-version: 20
      - run: npm i @diplodoc/cli -g
-     - run: yfm -i ./docs/diplodoc -o ./docs/html
+     - run: ./docs/gendocs.sh
 
      - name: Run playbook
        uses: dawidd6/action-ansible-playbook@v2

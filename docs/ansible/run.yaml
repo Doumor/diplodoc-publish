@@ -8,3 +8,4 @@
     diplodoc_config: "{{ role_path }}/files/diplodoc.yaml"
 
   - role: diplodoc-publish
+    diplodoc_config: "{{ role_path }}/files/diplodoc.yaml"
