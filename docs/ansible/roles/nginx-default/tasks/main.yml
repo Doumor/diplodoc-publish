@@ -1,3 +1,16 @@
+- name: Install nginx
+  become: true
+  ansible.builtin.apt:
+    name: nginx
+    state: present
+    cache_valid_time: 3600
+
+- name: Make sure a service unit is running
+  become: true
+  ansible.builtin.systemd_service:
+    state: started
+    name: nginx
+
 - name: "Create/update nginx config"
   become: true
   ansible.builtin.copy:
@@ -17,16 +30,3 @@
     group: root
     mode: "0644"
     remote_src: false
-
-- name: Install nginx
-  become: true
-  ansible.builtin.apt:
-    name: nginx
-    state: present
-    cache_valid_time: 3600
-
-- name: Make sure a service unit is running
-  become: true
-  ansible.builtin.systemd_service:
-    state: started
-    name: nginx
